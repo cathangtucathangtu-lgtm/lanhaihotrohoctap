@@ -1,0 +1,1276 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#06111a">
+<title>Lumière L'Anhs AI — Trợ giảng học tập</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Be+Vietnam+Pro:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:dark;--bg:#06111a;--fg:#eaf4f8;--muted:#9bb2c0;--line:rgba(255,255,255,.13);--surface:rgba(255,255,255,.055);--g1:#2dd4bf;--g2:#38bdf8;--g3:#f472b6;--g4:#fbbf24;--grad:linear-gradient(100deg,var(--g1),var(--g2) 38%,var(--g3) 72%,var(--g4));--display:"Bricolage Grotesque","Be Vietnam Pro",system-ui,sans-serif;--body:"Be Vietnam Pro",system-ui,sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:20px}body{margin:0;min-height:100vh;overflow-x:hidden;background:var(--bg);color:var(--fg);font:16px/1.65 var(--body)}a{color:inherit}.wrap{position:relative;z-index:1;width:min(1120px,calc(100% - 40px));margin:auto}.aurora{position:absolute;inset:0 0 auto;height:760px;overflow:hidden;pointer-events:none;mask-image:linear-gradient(#000 55%,transparent)}.aurora:before{content:"";position:absolute;inset:-25% -10% 0;background:radial-gradient(38% 48% at 18% 32%,var(--g1),transparent 70%),radial-gradient(34% 44% at 50% 18%,var(--g2),transparent 70%),radial-gradient(34% 48% at 82% 34%,var(--g3),transparent 70%),radial-gradient(28% 36% at 62% 72%,var(--g4),transparent 70%);filter:blur(36px);opacity:.42;animation:drift 22s ease-in-out infinite alternate}@keyframes drift{to{transform:translate3d(3%,4%,0) scale(1.08)}}
+h1,h2,h3{font-family:var(--display);line-height:1.08;letter-spacing:-.025em;margin:0}p{margin:0}.nav{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:24px 0}.brand{display:inline-flex;align-items:center;gap:11px;text-decoration:none;font:800 1.18rem var(--display);letter-spacing:-.02em}.brand-mark{width:26px;height:26px;border-radius:9px;background:var(--grad);transform:rotate(12deg)}.nav-links{display:flex;gap:25px;list-style:none;padding:0;margin:0;color:var(--muted);font-size:.94rem}.nav-links a{text-decoration:none}.nav-links a:hover{color:var(--fg)}.button{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:11px 20px;border:1px solid var(--line);border-radius:999px;background:var(--surface);color:var(--fg);font:600 .94rem var(--body);text-decoration:none;transition:transform .2s,background .2s}.button:hover{transform:translateY(-2px);background:rgba(255,255,255,.11)}.button.primary{border:0;background:var(--grad);color:#04121a;box-shadow:0 10px 30px -12px var(--g2)}.button.small{min-height:39px;padding:9px 16px;font-size:.88rem}.hero{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:52px;padding:64px 0 90px}.pill{display:inline-flex;align-items:center;gap:9px;padding:7px 14px 7px 8px;border:1px solid var(--line);border-radius:999px;background:var(--surface);color:var(--muted);font-size:.82rem}.pill b{padding:2px 9px;border-radius:999px;background:var(--grad);color:#04121a;font-size:.72rem}.hero h1{max-width:680px;margin-top:22px;font-size:clamp(2.7rem,6.1vw,4.7rem);font-weight:800}.gradient{background:var(--grad);background-clip:text;-webkit-background-clip:text;color:transparent}.lead{max-width:52ch;margin-top:22px;color:var(--muted);font-size:1.08rem}.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}.meta{margin-top:24px;color:var(--muted);font: .76rem "JetBrains Mono",monospace}.preview{padding:21px;border:1px solid var(--line);border-radius:24px;background:rgba(255,255,255,.055);backdrop-filter:blur(16px);box-shadow:0 30px 80px -30px rgba(0,0,0,.7)}.preview-top{display:flex;justify-content:space-between;gap:12px;padding:0 2px 17px;color:var(--muted);font:.75rem "JetBrains Mono",monospace}.online{display:flex;align-items:center;gap:8px}.online:before{content:"";width:8px;height:8px;border-radius:50%;background:var(--g1);box-shadow:0 0 0 4px rgba(45,212,191,.16)}.bubble{max-width:91%;margin:12px 0;padding:13px 16px;border:1px solid var(--line);border-radius:17px;background:rgba(255,255,255,.07);font-size:.9rem;line-height:1.6}.bubble.user{margin-left:auto;border:0;border-bottom-right-radius:6px;background:var(--grad);color:#04121a}.preview-hint{margin-top:18px;color:var(--muted);font-size:.82rem}.section{padding:62px 0 0}.eyebrow{color:var(--muted);font: .76rem "JetBrains Mono",monospace;letter-spacing:.13em;text-transform:uppercase}.section h2{max-width:24ch;margin-top:12px;font-size:clamp(1.9rem,4vw,2.8rem)}.feature-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px;margin-top:32px}.feature{padding:23px;border:1px solid var(--line);border-radius:19px;background:var(--surface)}.feature-icon{display:grid;width:43px;height:43px;place-items:center;border-radius:13px;background:var(--grad);color:#04121a;font-size:1.2rem}.feature h3{margin-top:18px;font-size:1.12rem}.feature p{margin-top:9px;color:var(--muted);font-size:.88rem}.tutor-section{padding:80px 0 0}.tutor-heading{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:24px}.tutor-heading h2{font-size:clamp(2rem,4vw,2.8rem)}.tutor-heading p{max-width:48ch;margin-top:12px;color:var(--muted)}.app-view[hidden]{display:none!important}.app-view{position:fixed;inset:0;z-index:90;display:flex;flex-direction:column;background:#000}.app-toolbar{position:absolute;top:12px;left:12px;z-index:5;display:flex;align-items:center;gap:12px}.app-toolbar .button{min-height:40px;padding:8px 15px;background:rgba(5,22,18,.82);backdrop-filter:blur(12px)}.app-toolbar span{padding:5px 10px;border-radius:999px;background:rgba(5,22,18,.75);color:#e4f5f0;font-size:.85rem;backdrop-filter:blur(12px)}.tutor-frame{display:block;width:100%;height:100%;flex:1;min-height:0;border:0;background:#000}.cta{display:flex;align-items:center;justify-content:space-between;gap:28px;margin-top:84px;padding:clamp(28px,5vw,55px);border-radius:28px;background:var(--grad);color:#04121a}.cta h2{max-width:18ch;font-size:clamp(1.7rem,3.8vw,2.5rem)}.cta p{margin-top:10px;opacity:.8}.cta .button{flex:none;border:0;background:#04121a;color:white}footer{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin:38px 0 24px;color:var(--muted);font-size:.82rem}
+@media(max-width:850px){.hero{grid-template-columns:1fr;gap:32px;padding:35px 0 60px}.feature-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.nav-links{display:none}.tutor-heading{align-items:flex-start;flex-direction:column}.tutor-frame{min-height:1100px}.cta{align-items:flex-start;flex-direction:column}}@media(max-width:520px){.wrap{width:min(100% - 28px,1120px)}.nav{padding:18px 0}.brand{font-size:1rem}.hero h1{font-size:2.55rem}.feature-grid{grid-template-columns:1fr}.feature{padding:20px}.tutor-frame{min-height:1000px}.meta{font-size:.67rem}.button{padding-inline:16px}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="aurora" aria-hidden="true"></div>
+<div class="wrap">
+<header class="nav">
+  <a class="brand" href="#top"><span class="brand-mark" aria-hidden="true"></span>Lumière L'Anhs AI</a>
+  <ul class="nav-links"><li><a href="#tinh-nang">Tính năng</a></li><li><a href="#ai">Trợ giảng AI</a></li><li><a href="#bat-dau">Bắt đầu</a></li></ul>
+  <a class="button small" href="#ai">Truy cập AI</a>
+</header>
+<main id="top">
+  <section class="hero" aria-labelledby="hero-title">
+    <div>
+      <span class="pill"><b>AI HỌC TẬP</b> Học bằng cách tự làm</span>
+      <h1 id="hero-title">Hiểu bài sâu hơn, <span class="gradient">tự tin tự giải</span></h1>
+      <p class="lead">Lumière L'Anhs AI là trợ giảng đồng hành cùng bạn: gợi mở phương pháp giải, đọc đề từ ảnh hoặc PDF, và giúp bạn xây dựng lộ trình học chủ động.</p>
+      <div class="actions"><a class="button primary" href="#ai">Truy cập AI</a><a class="button" href="#tinh-nang">Khám phá tính năng</a></div>
+      <p class="meta">HỎI BÀI · TẢI ẢNH / PDF · LẬP LỘ TRÌNH HỌC</p>
+    </div>
+    <div class="preview" aria-label="Ví dụ cách trợ giảng hướng dẫn học">
+      <div class="preview-top"><span class="online">Trợ giảng sẵn sàng</span><span>Học chủ động</span></div>
+      <div class="bubble user">Mình chưa biết bắt đầu giải bài này từ đâu.</div>
+      <div class="bubble">Mình cùng xác định dạng bài trước nhé. Em thử cho biết đề bài đang hỏi điều gì và dữ kiện nào có thể dùng?</div>
+      <div class="preview-hint">Gợi ý từng bước để bạn tự tìm ra lời giải — không làm bài thay bạn.</div>
+    </div>
+  </section>
+  <section class="section" id="tinh-nang">
+    <p class="eyebrow">Học tập chủ động</p><h2>Một trợ giảng, nhiều cách học tốt hơn</h2>
+    <div class="feature-grid">
+      <article class="feature"><div class="feature-icon" aria-hidden="true">✦</div><h3>Gợi mở từng bước</h3><p>Nhận phương pháp và câu hỏi dẫn dắt để tự giải bài, thay vì chép đáp án.</p></article>
+      <article class="feature"><div class="feature-icon" aria-hidden="true">↗</div><h3>Đọc đề từ ảnh/PDF</h3><p>Đính kèm đề bài hoặc tài liệu để trợ giảng cùng bạn phân tích nội dung.</p></article>
+      <article class="feature"><div class="feature-icon" aria-hidden="true">▤</div><h3>Lộ trình học riêng</h3><p>Tạo kế hoạch theo tuần với hoạt động tự luyện và cách tự đánh giá tiến bộ.</p></article>
+      <article class="feature"><div class="feature-icon" aria-hidden="true">◷</div><h3>Lưu lịch sử học</h3><p>Tìm lại cuộc trò chuyện và tiếp tục học từ những lần trao đổi trước.</p></article>
+    </div>
+  </section>
+    <section class="app-view" id="ai" aria-label="Trợ giảng AI" hidden>
+    <div class="app-toolbar"><button class="button" id="homeButton" type="button">← Về trang chính</button><span>Lumière L'Anhs AI</span></div>
+    <iframe id="tutorApp" class="tutor-frame" title="Ứng dụng trợ giảng Lumière L'Anhs AI" srcdoc="&lt;!doctype html&gt;&lt;html&gt;&lt;head&gt;&lt;meta charset=utf8&gt;&lt;meta name=viewport content=&quot;width=device-width,initial-scale=1,viewport-fit=cover&quot;&gt;&lt;style&gt;:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}&lt;/style&gt;&lt;/head&gt;&lt;body&gt;
+&lt;title&gt;Lumi&#232;re L&#39;Anhs AI&lt;/title&gt;
+&lt;meta name=&quot;claude:viewport-fit-sides&quot; content=&quot;cover&quot;&gt;
+&lt;script&gt;
+  window.MathJax = {
+    tex: {
+      inlineMath: [[&#39;$&#39;, &#39;$&#39;], [&#39;\\(&#39;, &#39;\\)&#39;]],
+      displayMath: [[&#39;$$&#39;, &#39;$$&#39;], [&#39;\\[&#39;, &#39;\\]&#39;]]
+    },
+    startup: { typeset: false }
+  };
+&lt;/script&gt;
+&lt;script defer src=&quot;https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-svg.js&quot; onload=&quot;typesetPendingMath()&quot;&gt;&lt;/script&gt;
+&lt;style&gt;
+  /* Bố cục: một cột k&#237;nh mờ tr&#234;n nền ngọc b&#237;ch tối. Chat l&#224; trung t&#226;m, menu 3 gạch mở thanh lịch sử
+     (k&#232;m c&#244;ng cụ lập lộ tr&#236;nh). Tr&#234;n điện thoại thanh n&#224;y mở th&#224;nh tấm phủ gần to&#224;n m&#224;n h&#236;nh. */
+  @font-face {
+    font-family: &#39;UTM Neutra&#39;;
+    src: local(&#39;UTM Neutra&#39;), local(&#39;UTMNeutra&#39;), local(&#39;UTM-Neutra&#39;),
+         url(&#39;UTMNeutra.woff2&#39;) format(&#39;woff2&#39;),
+         url(&#39;UTMNeutra.ttf&#39;) format(&#39;truetype&#39;),
+         url(&#39;UTMNeutra.otf&#39;) format(&#39;opentype&#39;),
+         url(&#39;fonts/UTMNeutra.ttf&#39;) format(&#39;truetype&#39;);
+    font-display: swap;
+  }
+
+  :root {
+    --font: &#39;UTM Neutra&#39;, &#39;Palatino Linotype&#39;, &#39;Book Antiqua&#39;, Georgia, serif;
+    --jade: #1fd1a0;
+    --jade-deep: #0b8f72;
+    --glass: rgba(255,255,255,.05);
+    --line: rgba(80,230,190,.20);
+    --text: #e4f5f0;
+    --muted: #8fb3aa;
+    --ease: cubic-bezier(.22,1,.36,1);
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  [hidden] { display: none !important; }
+  html { scroll-behavior: smooth; background: #000; }
+  body {
+    margin: 0; min-height: 100vh; color: var(--text);
+    font-family: var(--font); font-synthesis: none; font-weight: 400; letter-spacing: .2px;
+    background-color: #02100c;
+    background-image:
+      radial-gradient(900px 520px at 12% -8%, rgba(31,209,160,.24), transparent 60%),
+      radial-gradient(800px 520px at 100% 100%, rgba(31,209,160,.15), transparent 60%),
+      linear-gradient(160deg, #000 0%, #02100c 45%, #05342a 100%);
+    background-attachment: fixed;
+    transition: padding-right .6s var(--ease);
+    overflow-x: hidden;
+  }
+  input, button, summary, textarea { font-family: var(--font); font-synthesis: none; }
+  .app {
+    max-width: 1180px; margin: 0 auto;
+    padding-block: 18px 40px;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+    animation: lensIn 1.5s var(--ease) backwards;
+  }
+  @media (min-width: 1100px) { body.side-open { padding-right: 330px; } }
+
+  * { scrollbar-width: thin; scrollbar-color: rgba(31,209,160,.4) transparent; }
+  ::-webkit-scrollbar { width: 8px; height: 8px; }
+  ::-webkit-scrollbar-thumb { background: rgba(31,209,160,.35); border-radius: 8px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+
+  /* ===== Hiệu ứng ống k&#237;nh khi v&#224;o ===== */
+  #lens {
+    position: fixed; inset: 0; z-index: 100; pointer-events: none;
+    background: radial-gradient(circle at 50% 38%, rgba(31,209,160,.20), rgba(0,0,0,.6) 72%);
+    -webkit-backdrop-filter: blur(38px) saturate(150%); backdrop-filter: blur(38px) saturate(150%);
+    animation: lensOut 1.6s var(--ease) .1s forwards;
+  }
+  @keyframes lensOut {
+    0% { opacity: 1; -webkit-backdrop-filter: blur(38px) saturate(150%); backdrop-filter: blur(38px) saturate(150%); }
+    100% { opacity: 0; -webkit-backdrop-filter: blur(0) saturate(100%); backdrop-filter: blur(0) saturate(100%); }
+  }
+  @keyframes lensIn { from { filter: blur(26px); transform: scale(1.08); opacity: 0; } }
+
+  /* ===== Biểu tượng SVG n&#233;t mảnh ===== */
+  svg.i { width: 1.15em; height: 1.15em; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; vertical-align: -.2em; flex: none; }
+  .with-i { display: inline-flex; align-items: center; gap: 8px; }
+  svg.i.spin { animation: spin 1s linear infinite; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* ===== Thương hiệu ===== */
+  .brand-wrap { text-align: center; padding: 14px 0 20px; }
+  .orb {
+    width: 46px; height: 46px; margin: 0 auto 10px; border-radius: 50%;
+    background:
+      radial-gradient(circle at 30% 28%, rgba(255,255,255,.95) 0 10%, rgba(255,255,255,0) 32%),
+      radial-gradient(circle at 65% 75%, rgba(120,225,255,.75), rgba(120,225,255,0) 55%),
+      linear-gradient(135deg, #00a67e, #5fe3c0 55%, #9fe6ff);
+    box-shadow: 0 6px 26px rgba(31,209,160,.45), inset 0 0 12px rgba(255,255,255,.55);
+    animation: float 5s ease-in-out infinite;
+  }
+  h1.brand {
+    margin: 0; font-family: var(--font); font-synthesis: none;
+    font-size: 46px; font-weight: 400; letter-spacing: 1.5px; line-height: 1.25; text-wrap: balance;
+    background: linear-gradient(105deg, #0fd6a2 0%, #6ff2d0 28%, #c4f5ff 48%, #6fd3f7 66%, #1fd1a0 85%, #0fd6a2 100%);
+    background-size: 300% 100%;
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent; color: transparent;
+    filter: drop-shadow(0 2px 10px rgba(31,209,160,.35));
+    animation: shine 7s linear infinite;
+  }
+  .tagline { margin: 6px 0 0; color: var(--muted); font-size: 15px; letter-spacing: 1px; }
+  @keyframes shine { 0% { background-position: 0% 50%; } 100% { background-position: 300% 50%; } }
+  @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+
+  h2 { font-size: 19px; font-weight: 400; letter-spacing: .8px; margin: 22px 4px 10px; color: #bfeee1; }
+
+  /* ===== Khung k&#237;nh ===== */
+  .box {
+    background: var(--glass); border: 1px solid var(--line); border-radius: 22px;
+    padding: 14px; margin-bottom: 18px;
+    backdrop-filter: blur(16px) saturate(130%); -webkit-backdrop-filter: blur(16px) saturate(130%);
+    box-shadow: 0 10px 40px rgba(0,0,0,.35);
+  }
+  details.box &gt; summary { cursor: pointer; font-size: 17px; letter-spacing: .6px; color: #bfeee1; list-style: none; display: flex; align-items: center; gap: 8px; }
+  details.box &gt; summary::-webkit-details-marker { display: none; }
+  details.box[open] &gt; :not(summary) { animation: fadeIn .45s ease both; }
+  details.box[open] &gt; summary { margin-bottom: 10px; }
+  .key-row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+  .hint { margin: 10px 0 0; color: var(--muted); font-size: 14px; line-height: 1.6; }
+
+  input[type=text], input[type=password], textarea {
+    background: rgba(0,0,0,.4); color: var(--text); border: 1px solid var(--line);
+    border-radius: 999px; padding: 10px 16px; font-size: 15px; outline: none; caret-color: var(--jade);
+    transition: border-color .3s, box-shadow .3s;
+  }
+  textarea { border-radius: 22px; resize: none; line-height: 1.4; max-height: 140px; display: block; }
+  input::placeholder, textarea::placeholder { color: #6f948b; }
+  input[type=text]:focus, input[type=password]:focus, textarea:focus { border-color: var(--jade); box-shadow: 0 0 0 3px rgba(31,209,160,.18); }
+  input[type=file] { color: var(--muted); font-size: 14px; max-width: 100%; }
+  input[type=file]::file-selector-button {
+    background: rgba(31,209,160,.15); color: var(--text); border: 1px solid var(--line); font-family: var(--font);
+    border-radius: 999px; padding: 6px 12px; margin-right: 10px; cursor: pointer;
+  }
+  #apiKey { flex: 1 1 200px; min-width: 0; }
+
+  /* G&#245; chữ: chữ mới hiện ra từ mờ sang n&#233;t */
+  textarea.typing, input[type=text].typing { animation: typeBlur .3s ease-out; }
+  @keyframes typeBlur {
+    from { color: transparent; text-shadow: 0 0 8px var(--text); }
+    to { color: var(--text); text-shadow: 0 0 0 transparent; }
+  }
+
+  button {
+    font-size: 15px; font-weight: 400; letter-spacing: .6px; cursor: pointer; border: none; border-radius: 999px; padding: 9px 18px;
+    background: linear-gradient(135deg, var(--jade-deep), var(--jade)); color: #00150f;
+    display: inline-flex; align-items: center; justify-content: center; gap: 7px;
+    transition: transform .25s var(--ease), box-shadow .3s, filter .3s;
+  }
+  button:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(31,209,160,.35); }
+  button:active { transform: translateY(0) scale(.97); }
+  button:disabled { cursor: wait; opacity: .65; transform: none; box-shadow: none; }
+  button:focus-visible, summary:focus-visible { outline: 2px solid var(--jade); outline-offset: 2px; }
+  button.ghost { background: rgba(255,255,255,.06); color: var(--text); border: 1px solid var(--line); }
+  button.ghost:hover { box-shadow: 0 6px 20px rgba(0,0,0,.4); border-color: var(--jade); }
+  button.icon { width: 42px; height: 42px; padding: 0; flex: none; }
+  button.icon svg.i { width: 19px; height: 19px; }
+
+  #keyStatus { margin-top: 10px; font-size: 14px; line-height: 1.5; }
+  .ok { color: #5ff0c4; } .bad { color: #ff8a8a; }
+
+  /* ===== Khung chat bo tr&#242;n ===== */
+  #chatBox {
+    height: min(72vh, 860px); height: min(72dvh, 860px); min-height: 420px; overflow-y: auto; padding: 16px;
+    background: rgba(0,0,0,.30); border: 1px solid var(--line); border-radius: 20px;
+    scroll-behavior: smooth; overscroll-behavior: contain; -webkit-overflow-scrolling: touch;
+    transition: border-color .3s ease, box-shadow .3s ease;
+  }
+  #chatBox.mb &gt; *, #histList.mb &gt; * { filter: blur(var(--mb, 0px)); }
+  .empty { height: 100%; display: grid; place-items: center; text-align: center; color: var(--muted); font-size: 15px; line-height: 1.8; padding: 20px; animation: fadeIn .8s ease both; }
+  .empty svg.i { width: 34px; height: 34px; color: var(--jade); margin-bottom: 8px; stroke-width: 1.3; }
+  .empty b { color: #bfeee1; font-weight: 400; font-size: 18px; letter-spacing: 1px; }
+  .message {
+    padding: 10px 14px; margin: 8px 0; border-radius: 18px; white-space: pre-wrap; max-width: 88%;
+    animation: msgIn .55s var(--ease) both; word-wrap: break-word; overflow-wrap: anywhere; min-width: 0;
+  }
+  .user-msg { margin-left: auto; background: linear-gradient(135deg, #0b8f72, #17b88f); color: #00150f; border-bottom-right-radius: 6px; }
+  .ai-msg { background: rgba(255,255,255,.07); border: 1px solid var(--line); white-space: normal; line-height: 1.65; border-bottom-left-radius: 6px; }
+  .ai-msg b { font-weight: 400; color: #8ff5d8; text-shadow: 0 0 .5px #8ff5d8; }
+  .ai-msg p { margin: 6px 0; }
+  .ai-msg ul, .ai-msg ol { margin: 6px 0; padding-left: 22px; }
+  .ai-msg blockquote { margin: 6px 0; padding: 4px 12px; border-left: 3px solid var(--jade); color: #b9d9d0; background: rgba(31,209,160,.08); border-radius: 0 10px 10px 0; }
+  .ai-msg h4 { margin: 12px 0 4px; color: #7ff3d2; font-weight: 400; font-size: 17px; letter-spacing: .6px; }
+  .ai-msg code { background: rgba(255,255,255,.1); padding: 1px 6px; border-radius: 6px; font-family: Consolas, monospace; }
+  .ai-msg hr { border: none; border-top: 1px solid var(--line); }
+  .ai-msg mjx-container { max-width: 100%; overflow-x: auto; overflow-y: hidden; }
+  .message img { max-width: 100%; max-height: 220px; border-radius: 12px; display: block; margin-bottom: 6px; }
+  .pulse { animation: pulse 1.4s ease-in-out infinite; display: inline-flex; align-items: center; gap: 8px; }
+
+  @keyframes msgIn { from { opacity: 0; transform: translateY(14px) scale(.98); filter: blur(8px); } to { opacity: 1; transform: none; filter: blur(0); } }
+  @keyframes fadeIn { from { opacity: 0; filter: blur(6px); } to { opacity: 1; filter: blur(0); } }
+  @keyframes pulse { 0%,100% { opacity: .45; } 50% { opacity: 1; } }
+
+  .composer { display: flex; gap: 8px; align-items: flex-end; margin-top: 12px; transition: box-shadow .3s ease, transform .3s var(--ease); }
+  .composer textarea { flex: 1; min-width: 0; }
+  #attachPreview { display: none; align-items: center; gap: 8px; margin-top: 10px; font-size: 14px; color: var(--muted); animation: fadeIn .4s ease both; min-width: 0; }
+  #attachPreview span { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  #attachPreview img { height: 52px; border-radius: 12px; border: 1px solid var(--line); }
+  #attachPreview button { padding: 4px 10px; }
+
+  /* ===== N&#250;t tr&#234;n c&#249;ng ===== */
+  #topActions {
+    position: fixed; z-index: 30; display: flex; gap: 8px;
+    top: calc(12px + env(safe-area-inset-top, 0px)); right: max(12px, env(safe-area-inset-right, 0px));
+    transition: opacity .4s, filter .4s, transform .5s var(--ease);
+  }
+  body.side-open #topActions { opacity: 0; filter: blur(6px); transform: translateX(20px); pointer-events: none; }
+  #topActions button { backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); background: rgba(6,22,18,.6); color: var(--text); border: 1px solid var(--line); height: 42px; }
+
+  /* ===== Thanh lịch sử ===== */
+  #sidebar {
+    position: fixed; z-index: 40; width: 306px;
+    top: calc(12px + env(safe-area-inset-top, 0px)); bottom: calc(12px + env(safe-area-inset-bottom, 0px)); right: max(12px, env(safe-area-inset-right, 0px));
+    display: flex; flex-direction: column; padding: 14px; border-radius: 24px;
+    background: rgba(5,22,18,.62); border: 1px solid var(--line);
+    backdrop-filter: blur(24px) saturate(150%); -webkit-backdrop-filter: blur(24px) saturate(150%);
+    box-shadow: 0 20px 60px rgba(0,0,0,.55);
+    transform: translateX(calc(100% + 40px)); opacity: 0; filter: blur(12px); pointer-events: none; visibility: hidden;
+    transition: transform .6s var(--ease), opacity .45s ease, filter .55s ease, visibility 0s linear .6s;
+    will-change: transform, opacity, filter;
+  }
+  body.side-open #sidebar { transform: none; opacity: 1; filter: blur(0); pointer-events: auto; visibility: visible; transition-delay: 0s; }
+  .side-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
+  .side-head strong { color: #bfeee1; font-size: 17px; font-weight: 400; letter-spacing: .8px; display: inline-flex; align-items: center; gap: 8px; }
+  .side-head button { width: 36px; height: 36px; padding: 0; }
+  #newChatBtn { width: 100%; margin-bottom: 10px; }
+
+  .road { border: 1px solid var(--line); border-radius: 16px; background: rgba(255,255,255,.04); padding: 10px 12px; margin-bottom: 10px; }
+  .road &gt; summary { cursor: pointer; list-style: none; color: #bfeee1; font-size: 15px; letter-spacing: .5px; display: flex; align-items: center; gap: 8px; min-height: 28px; }
+  .road &gt; summary::-webkit-details-marker { display: none; }
+  .road[open] &gt; summary { margin-bottom: 8px; }
+  .road[open] &gt; :not(summary) { animation: fadeIn .4s ease both; }
+  .road p { margin: 0 0 8px; color: var(--muted); font-size: 13px; line-height: 1.6; }
+  .road input[type=file] { display: block; width: 100%; margin-bottom: 8px; }
+  .road button { width: 100%; }
+
+  #histSearch { width: 100%; padding: 8px 14px; font-size: 14px; margin-bottom: 8px; }
+  #histList { flex: 1; overflow-y: auto; overscroll-behavior: contain; scroll-behavior: smooth; margin: 0 -4px; padding: 0 4px; min-height: 0; }
+  .hist-item {
+    display: flex; align-items: center; gap: 8px; padding: 7px 10px; border-radius: 14px; cursor: pointer;
+    border: 1px solid transparent; margin-bottom: 3px;
+    transition: background .25s, border-color .25s, transform .3s var(--ease);
+    animation: fadeIn .45s ease both;
+  }
+  .hist-item:hover { background: rgba(31,209,160,.1); transform: translateX(-2px); }
+  .hist-item.active { background: rgba(31,209,160,.16); border-color: var(--line); }
+  .hist-main { min-width: 0; flex: 1; }
+  .hist-title { font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display: flex; align-items: center; gap: 6px; }
+  .hist-title svg.i { color: var(--jade); }
+  .hist-time { font-size: 12px; color: var(--muted); }
+  .hist-del { width: 30px; height: 30px; padding: 0; background: transparent; color: var(--muted); opacity: 0; transition: opacity .25s; flex: none; }
+  .hist-item:hover .hist-del { opacity: 1; }
+  @media (hover: none) { .hist-del { opacity: .7; } }
+  .hist-del:hover { color: #ff8a8a; box-shadow: none; transform: none; }
+  .hist-empty { color: var(--muted); font-size: 14px; padding: 8px 4px; line-height: 1.7; }
+  .side-foot { margin-top: 8px; text-align: center; }
+  .side-foot button { font-size: 13px; padding: 6px 14px; }
+
+  #scrim { position: fixed; inset: 0; z-index: 35; background: rgba(0,0,0,.35); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); opacity: 0; pointer-events: none; transition: opacity .45s ease; }
+  @media (max-width: 1099px) { body.side-open #scrim { opacity: 1; pointer-events: auto; } }
+
+  /* ===== Hộp thoại x&#225;c nhận v&#224; th&#244;ng b&#225;o ===== */
+  #dlg { position: fixed; inset: 0; z-index: 120; display: grid; place-items: center; padding: 20px; background: rgba(0,0,0,.5); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); animation: fadeIn .3s ease both; }
+  #dlg .card { width: min(360px, 100%); padding: 18px; border-radius: 22px; background: rgba(6,24,19,.9); border: 1px solid var(--line); box-shadow: 0 20px 60px rgba(0,0,0,.6); }
+  #dlg p { margin: 0 0 16px; line-height: 1.6; }
+  #dlg .row { display: flex; gap: 8px; justify-content: flex-end; }
+  #toast {
+    position: fixed; z-index: 110; left: 50%; bottom: calc(18px + env(safe-area-inset-bottom, 0px));
+    transform: translate(-50%, 20px); max-width: min(520px, calc(100% - 32px));
+    padding: 10px 18px; border-radius: 18px; font-size: 14px; line-height: 1.5; text-align: center;
+    background: rgba(6,24,19,.92); border: 1px solid var(--line); box-shadow: 0 10px 40px rgba(0,0,0,.5);
+    opacity: 0; filter: blur(8px); pointer-events: none; transition: opacity .35s ease, transform .5s var(--ease), filter .4s ease;
+  }
+  #toast.show { opacity: 1; filter: blur(0); transform: translate(-50%, 0); }
+
+  /* ===== Điện thoại ===== */
+  @media (max-width: 600px) {
+    .app { padding-block: 10px 28px; }
+    .brand-wrap { padding: 44px 0 12px; }
+    .orb { width: 38px; height: 38px; margin-bottom: 8px; }
+    .tagline { font-size: 13px; }
+    h2 { font-size: 17px; margin: 14px 4px 8px; }
+    .box { padding: 10px; border-radius: 20px; margin-bottom: 14px; }
+    #chatBox { height: calc(100vh - 330px); height: calc(100dvh - 330px); min-height: 320px; padding: 10px; border-radius: 18px; }
+    .message { max-width: 96%; }
+    #topActions .lbl { display: none; }
+    #topActions button { width: 44px; height: 44px; padding: 0; }
+    button.icon { width: 44px; height: 44px; }
+    input[type=text], input[type=password], textarea { font-size: 16px; }
+    #sidebar { width: auto; left: max(10px, env(safe-area-inset-left, 0px)); right: max(10px, env(safe-area-inset-right, 0px)); }
+    .hist-item { padding: 10px; }
+  }
+  @media (max-width: 480px) { h1.brand { font-size: 32px; } }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition-duration: .01s !important; scroll-behavior: auto !important; }
+    #lens { display: none; }
+  }
+&lt;/style&gt;
+
+&lt;div id=&quot;lens&quot; aria-hidden=&quot;true&quot;&gt;&lt;/div&gt;
+
+&lt;svg width=&quot;0&quot; height=&quot;0&quot; style=&quot;position:absolute&quot; aria-hidden=&quot;true&quot;&gt;
+  &lt;defs&gt;
+    &lt;symbol id=&quot;i-key&quot; viewBox=&quot;0 0 24 24&quot;&gt;&lt;circle cx=&quot;8&quot; cy=&quot;15&quot; r=&quot;4&quot;/&gt;&lt;path d=&quot;M11 12l9-9M16 7l3 3M14 9l2 2&quot;/&gt;&lt;/symbol&gt;
+    &lt;symbol id=&quot;i-chat&quot; viewBox=&quot;0 0 24 24&quot;&gt;&lt;path d=&quot;M21 12a8 8 0 0 1-11.6 7.1L4 20l1.1-4.6A8 8 0 1 1 21 12z&quot;/&gt;&lt;/symbol&gt;
+    &lt;symbol id=&quot;i-menu&quot; viewBox=&quot;0 0 24 24&quot;&gt;&lt;path d=&quot;M4 7h16M4 12h16M4 17h16&quot;/&gt;&lt;/symbol&gt;
+    &lt;symbol id=&quot;i-map&quot; viewBox=&quot;0 0 24 24&quot;&gt;&lt;path d=&quot;M9 4L3 6v14l6-2 6 2 6-2V4l-6 2-6-2zM9 4v14M15 6v14&quot;/&gt;&lt;/symbol&gt;
+    &lt;symbol id=&quot;i-clip&quot; viewBox=&quot;0 0 24 24&quot;&gt;&lt;path d=&quot;M21 12.5l-8.6 8.6a5 5 0 0 1-7-7l9-9a3.3 3.3 0 0 1 4.7 4.7l-9 9a1.7 1.7 0 0 1-2.4-2.4l8.2-8.2&quot;/&gt;&lt;/symbol&gt;
+    &lt;symbol id=&quot;i-send&quot; viewBox=&quot;0 0 24 24&quot;&gt;&lt;path d=&quot;M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z&quot;/&gt;&lt;/symbol&gt;
+    &lt;symbol id=&quot;i-plus&quot; viewBox=&quot;0 0 24 24&quot;&gt;&lt;path d=&quot;M12 5v14M5 12h14&quot;/&gt;&lt;/symbol&gt;
+    &lt;symbol id=&quot;i-close&quot; viewBox=&quot;0 0 24 24&quot;&gt;&lt;path d=&quot;M6 6l12 12M18 6L6 18&quot;/&gt;&lt;/symbol&gt;
+    &lt;symbol id=&quot;i-file&quot; viewBox=&quot;0 0 24 24&quot;&gt;&lt;path d=&quot;M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z&quot;/&gt;&lt;path d=&quot;M14 3v5h5&quot;/&gt;&lt;/symbol&gt;
+    &lt;symbol id=&quot;i-spark&quot; viewBox=&quot;0 0 24 24&quot;&gt;&lt;path d=&quot;M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z&quot;/&gt;&lt;path d=&quot;M19 16l.7 1.8L21.5 18.5l-1.8.7L19 21l-.7-1.8-1.8-.7 1.8-.7z&quot;/&gt;&lt;/symbol&gt;
+    &lt;symbol id=&quot;i-trash&quot; viewBox=&quot;0 0 24 24&quot;&gt;&lt;path d=&quot;M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3&quot;/&gt;&lt;/symbol&gt;
+    &lt;symbol id=&quot;i-loader&quot; viewBox=&quot;0 0 24 24&quot;&gt;&lt;path d=&quot;M12 3a9 9 0 1 0 9 9&quot;/&gt;&lt;/symbol&gt;
+  &lt;/defs&gt;
+&lt;/svg&gt;
+
+&lt;div id=&quot;topActions&quot;&gt;
+  &lt;button type=&quot;button&quot; onclick=&quot;newConversation()&quot; title=&quot;Cuộc tr&#242; chuyện mới&quot; aria-label=&quot;Cuộc tr&#242; chuyện mới&quot;&gt;&lt;svg class=&quot;i&quot;&gt;&lt;use href=&quot;#i-plus&quot;/&gt;&lt;/svg&gt;&lt;span class=&quot;lbl&quot;&gt;Mới&lt;/span&gt;&lt;/button&gt;
+  &lt;button type=&quot;button&quot; onclick=&quot;setSide(true)&quot; title=&quot;Mở menu lịch sử&quot; aria-label=&quot;Mở menu lịch sử&quot;&gt;&lt;svg class=&quot;i&quot;&gt;&lt;use href=&quot;#i-menu&quot;/&gt;&lt;/svg&gt;&lt;span class=&quot;lbl&quot;&gt;Lịch sử&lt;/span&gt;&lt;/button&gt;
+&lt;/div&gt;
+
+&lt;div id=&quot;scrim&quot; onclick=&quot;setSide(false)&quot;&gt;&lt;/div&gt;
+
+&lt;aside id=&quot;sidebar&quot; aria-label=&quot;Lịch sử&quot;&gt;
+  &lt;div class=&quot;side-head&quot;&gt;
+    &lt;strong&gt;&lt;svg class=&quot;i&quot;&gt;&lt;use href=&quot;#i-menu&quot;/&gt;&lt;/svg&gt;Lịch sử&lt;/strong&gt;
+    &lt;button type=&quot;button&quot; class=&quot;ghost icon&quot; onclick=&quot;setSide(false)&quot; title=&quot;Thu gọn&quot; aria-label=&quot;Thu gọn&quot;&gt;&lt;svg class=&quot;i&quot;&gt;&lt;use href=&quot;#i-close&quot;/&gt;&lt;/svg&gt;&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;button type=&quot;button&quot; id=&quot;newChatBtn&quot; onclick=&quot;newConversation()&quot;&gt;&lt;svg class=&quot;i&quot;&gt;&lt;use href=&quot;#i-plus&quot;/&gt;&lt;/svg&gt;Cuộc tr&#242; chuyện mới&lt;/button&gt;
+
+  &lt;details class=&quot;road&quot; id=&quot;roadDet&quot;&gt;
+    &lt;summary&gt;&lt;svg class=&quot;i&quot;&gt;&lt;use href=&quot;#i-map&quot;/&gt;&lt;/svg&gt;Lập lộ tr&#236;nh học&lt;/summary&gt;
+    &lt;p&gt;Chọn ảnh hoặc PDF t&#224;i liệu. Lộ tr&#236;nh hiện trong khung chat v&#224; được lưu ngay trong danh s&#225;ch b&#234;n dưới.&lt;/p&gt;
+    &lt;input type=&quot;file&quot; id=&quot;bookInput&quot; accept=&quot;image/*,application/pdf&quot;&gt;
+    &lt;button type=&quot;button&quot; id=&quot;roadmapBtn&quot; onclick=&quot;generateRoadmap()&quot;&gt;Tạo lộ tr&#236;nh&lt;/button&gt;
+  &lt;/details&gt;
+
+  &lt;input type=&quot;text&quot; id=&quot;histSearch&quot; placeholder=&quot;T&#236;m trong lịch sử...&quot; oninput=&quot;renderHistory()&quot;&gt;
+  &lt;div id=&quot;histList&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;side-foot&quot;&gt;&lt;button type=&quot;button&quot; class=&quot;ghost&quot; onclick=&quot;clearHistory()&quot;&gt;&lt;svg class=&quot;i&quot;&gt;&lt;use href=&quot;#i-trash&quot;/&gt;&lt;/svg&gt;X&#243;a tất cả&lt;/button&gt;&lt;/div&gt;
+&lt;/aside&gt;
+
+&lt;div class=&quot;app&quot;&gt;
+  &lt;header class=&quot;brand-wrap&quot;&gt;
+    &lt;div class=&quot;orb&quot; aria-hidden=&quot;true&quot;&gt;&lt;/div&gt;
+    &lt;h1 class=&quot;brand&quot;&gt;Lumi&#232;re L&#39;Anhs AI&lt;/h1&gt;
+    &lt;p class=&quot;tagline&quot;&gt;Trợ giảng học chủ động &#183; Học bằng c&#225;ch tự l&#224;m&lt;/p&gt;
+  &lt;/header&gt;
+
+  &lt;details class=&quot;box&quot; id=&quot;keyBox&quot;&gt;
+    &lt;summary&gt;&lt;svg class=&quot;i&quot;&gt;&lt;use href=&quot;#i-key&quot;/&gt;&lt;/svg&gt;Cấu h&#236;nh API Key&lt;/summary&gt;
+    &lt;div class=&quot;key-row&quot;&gt;
+      &lt;input type=&quot;password&quot; id=&quot;apiKey&quot; placeholder=&quot;D&#225;n Gemini API Key (aistudio.google.com/apikey)&quot; autocomplete=&quot;off&quot;&gt;
+      &lt;button type=&quot;button&quot; onclick=&quot;saveKey()&quot;&gt;Lưu&lt;/button&gt;
+      &lt;button type=&quot;button&quot; class=&quot;ghost&quot; onclick=&quot;testKey()&quot;&gt;Kiểm tra key&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div id=&quot;keyStatus&quot;&gt;&lt;/div&gt;
+    &lt;p class=&quot;hint&quot; id=&quot;keyHint&quot; hidden&gt;Kh&#244;ng c&#243; key vẫn d&#249;ng được. Trợ giảng sẽ chạy bằng Claude ngay trong trang n&#224;y.&lt;/p&gt;
+  &lt;/details&gt;
+
+  &lt;h2 class=&quot;with-i&quot;&gt;&lt;svg class=&quot;i&quot;&gt;&lt;use href=&quot;#i-chat&quot;/&gt;&lt;/svg&gt;Hỏi phương ph&#225;p giải b&#224;i&lt;/h2&gt;
+  &lt;div class=&quot;box&quot;&gt;
+    &lt;div id=&quot;chatBox&quot;&gt;&lt;/div&gt;
+    &lt;div id=&quot;attachPreview&quot;&gt;
+      &lt;img id=&quot;attachThumb&quot; alt=&quot;Ảnh đ&#237;nh k&#232;m&quot;&gt;
+      &lt;span id=&quot;attachName&quot;&gt;&lt;/span&gt;
+      &lt;button type=&quot;button&quot; class=&quot;ghost icon&quot; style=&quot;width:30px;height:30px&quot; onclick=&quot;clearAttachment()&quot; title=&quot;Bỏ ảnh&quot; aria-label=&quot;Bỏ tệp đ&#237;nh k&#232;m&quot;&gt;&lt;svg class=&quot;i&quot;&gt;&lt;use href=&quot;#i-close&quot;/&gt;&lt;/svg&gt;&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;composer&quot;&gt;
+      &lt;input type=&quot;file&quot; id=&quot;chatFile&quot; accept=&quot;image/*,application/pdf&quot; style=&quot;display:none&quot;&gt;
+      &lt;button type=&quot;button&quot; class=&quot;ghost icon&quot; onclick=&quot;document.getElementById(&#39;chatFile&#39;).click()&quot; title=&quot;Tải ảnh/PDF đề b&#224;i l&#234;n&quot; aria-label=&quot;Đ&#237;nh k&#232;m ảnh hoặc PDF&quot;&gt;&lt;svg class=&quot;i&quot;&gt;&lt;use href=&quot;#i-clip&quot;/&gt;&lt;/svg&gt;&lt;/button&gt;
+      &lt;textarea id=&quot;userInput&quot; rows=&quot;1&quot; placeholder=&quot;Nhập đề b&#224;i hoặc đ&#237;nh k&#232;m ảnh...&quot; onkeydown=&quot;handleKeyPress(event)&quot;&gt;&lt;/textarea&gt;
+      &lt;button type=&quot;button&quot; class=&quot;icon&quot; id=&quot;sendBtn&quot; onclick=&quot;sendMessage()&quot; title=&quot;Gửi&quot; aria-label=&quot;Gửi&quot;&gt;&lt;svg class=&quot;i&quot;&gt;&lt;use href=&quot;#i-send&quot;/&gt;&lt;/svg&gt;&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id=&quot;dlg&quot; hidden&gt;
+  &lt;div class=&quot;card&quot; role=&quot;dialog&quot; aria-modal=&quot;true&quot;&gt;
+    &lt;p id=&quot;dlgMsg&quot;&gt;&lt;/p&gt;
+    &lt;div class=&quot;row&quot;&gt;
+      &lt;button type=&quot;button&quot; class=&quot;ghost&quot; id=&quot;dlgNo&quot;&gt;Hủy&lt;/button&gt;
+      &lt;button type=&quot;button&quot; id=&quot;dlgOk&quot;&gt;X&#243;a&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&quot;toast&quot; role=&quot;status&quot; aria-live=&quot;polite&quot;&gt;&lt;/div&gt;
+
+&lt;script&gt;
+  // Danh s&#225;ch model, thử lần lượt từ tr&#234;n xuống. gemini-2.5-flash đ&#227; bị Google tắt (lỗi 404).
+  // Khi Google ra model mới/ngừng model cũ, chỉ cần sửa danh s&#225;ch n&#224;y.
+  const MODELS = [
+    &quot;gemini-3.8-flash&quot;,
+    &quot;gemini-3.7-flash&quot;,
+    &quot;gemini-3.6-flash&quot;,
+    &quot;gemini-flash-latest&quot;,
+    &quot;gemini-3.5-flash-lite&quot;
+  ];
+
+  const $ = id =&gt; document.getElementById(id);
+  const keyEl = $(&#39;apiKey&#39;);
+  const statusEl = $(&#39;keyStatus&#39;);
+  const chatBox = $(&#39;chatBox&#39;);
+  const inputEl = $(&#39;userInput&#39;);
+
+  const ic = (name, cls = &#39;&#39;) =&gt; `&lt;svg class=&quot;i ${cls}&quot;&gt;&lt;use href=&quot;#i-${name}&quot;/&gt;&lt;/svg&gt;`;
+
+  // ===================== TH&#212;NG B&#193;O V&#192; X&#193;C NHẬN TRONG TRANG =====================
+  let toastTimer = 0;
+  function toast(msg) {
+    const t = $(&#39;toast&#39;);
+    t.textContent = msg;
+    t.classList.add(&#39;show&#39;);
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() =&gt; t.classList.remove(&#39;show&#39;), 4200);
+  }
+
+  function askConfirm(message, okLabel = &#39;X&#243;a&#39;) {
+    return new Promise(resolve =&gt; {
+      const dlg = $(&#39;dlg&#39;);
+      $(&#39;dlgMsg&#39;).textContent = message;
+      $(&#39;dlgOk&#39;).textContent = okLabel;
+      dlg.hidden = false;
+      const done = v =&gt; { dlg.hidden = true; dlg.onclick = null; $(&#39;dlgOk&#39;).onclick = null; $(&#39;dlgNo&#39;).onclick = null; resolve(v); };
+      $(&#39;dlgOk&#39;).onclick = () =&gt; done(true);
+      $(&#39;dlgNo&#39;).onclick = () =&gt; done(false);
+      dlg.onclick = e =&gt; { if (e.target === dlg) done(false); };
+      $(&#39;dlgNo&#39;).focus();
+    });
+  }
+
+  // ===================== HIỆU ỨNG ỐNG K&#205;NH KHI V&#192;O =====================
+  (function lensIntro() {
+    const lens = $(&#39;lens&#39;);
+    const kill = () =&gt; { if (lens &amp;&amp; lens.parentNode) lens.remove(); };
+    lens.addEventListener(&#39;animationend&#39;, kill);
+    setTimeout(kill, 2600);
+  })();
+
+  // ===================== L&#192;M MỜ CHUYỂN ĐỘNG KHI LƯỚT =====================
+  function makeMotionBlur(scroller, apply, max, gain) {
+    const isWin = scroller === window;
+    const getY = () =&gt; isWin ? window.scrollY : scroller.scrollTop;
+    let last = getY(), lastT = performance.now(), target = 0, cur = 0, raf = 0;
+    const tick = () =&gt; {
+      target *= 0.84;
+      cur += (target - cur) * 0.4;
+      if (cur &lt; 0.05 &amp;&amp; target &lt; 0.05) { cur = target = 0; apply(0); raf = 0; return; }
+      apply(cur);
+      raf = requestAnimationFrame(tick);
+    };
+    scroller.addEventListener(&#39;scroll&#39;, () =&gt; {
+      const y = getY(), now = performance.now();
+      const perFrame = Math.abs(y - last) / Math.max(8, now - lastT) * 16;
+      last = y; lastT = now;
+      target = Math.max(target, Math.min(max, perFrame * gain));
+      if (!raf) raf = requestAnimationFrame(tick);
+    }, { passive: true });
+  }
+
+  const classBlur = el =&gt; v =&gt; {
+    el.style.setProperty(&#39;--mb&#39;, v.toFixed(2) + &#39;px&#39;);
+    el.classList.toggle(&#39;mb&#39;, v &gt; 0);
+  };
+  makeMotionBlur($(&#39;chatBox&#39;), classBlur($(&#39;chatBox&#39;)), 2.6, 0.09);
+  makeMotionBlur($(&#39;histList&#39;), classBlur($(&#39;histList&#39;)), 2.2, 0.09);
+  const appEl = document.querySelector(&#39;.app&#39;);
+  makeMotionBlur(window, v =&gt; { appEl.style.filter = v &gt; 0 ? `blur(${v.toFixed(2)}px)` : &#39;&#39;; }, 2.4, 0.07);
+
+  // ===================== L&#192;M MỜ KHI G&#213; CHỮ =====================
+  document.addEventListener(&#39;input&#39;, e =&gt; {
+    const t = e.target;
+    if (t &amp;&amp; t.matches &amp;&amp; t.matches(&#39;textarea, input[type=text]&#39;)) {
+      t.classList.remove(&#39;typing&#39;);
+      void t.offsetWidth;
+      t.classList.add(&#39;typing&#39;);
+    }
+    if (t === inputEl) autoGrow();
+  });
+
+  function autoGrow() {
+    inputEl.style.height = &#39;auto&#39;;
+    inputEl.style.height = Math.min(inputEl.scrollHeight + 2, 140) + &#39;px&#39;;
+  }
+
+  // ===================== API KEY =====================
+  function cleanKey(raw) {
+    return (raw || &#39;&#39;)
+      .replace(/[\s​-‍﻿&quot;&#39;“”‘’]/g, &#39;&#39;)
+      .replace(/^key=/i, &#39;&#39;);
+  }
+
+  function setStatus(text, ok) {
+    statusEl.textContent = text;
+    statusEl.className = ok ? &#39;ok&#39; : &#39;bad&#39;;
+  }
+
+  function getKey() {
+    let stored = &#39;&#39;;
+    try { stored = localStorage.getItem(&#39;gemini_key&#39;) || &#39;&#39;; } catch (e) {}
+    const k = cleanKey(keyEl.value) || cleanKey(stored);
+    if (k) { try { localStorage.setItem(&#39;gemini_key&#39;, k); } catch (e) {} }
+    return k;
+  }
+
+  try { keyEl.value = localStorage.getItem(&#39;gemini_key&#39;) || &#39;&#39;; } catch (e) {}
+  $(&#39;keyBox&#39;).open = !keyEl.value;
+
+  function saveKey() {
+    const k = cleanKey(keyEl.value);
+    if (!k) { setStatus(&quot;Bạn chưa d&#225;n API Key.&quot;, false); return; }
+    keyEl.value = k;
+    try { localStorage.setItem(&#39;gemini_key&#39;, k); } catch (e) {}
+    if (!/^AIza[0-9A-Za-z_\-]{30,}$/.test(k)) {
+      setStatus(&quot;Đ&#227; lưu, nhưng key tr&#244;ng kh&#244;ng đ&#250;ng định dạng (thường bắt đầu bằng \&quot;AIza\&quot;). H&#227;y kiểm tra lại.&quot;, false);
+    } else {
+      setStatus(&quot;Đ&#227; lưu API Key. Bấm \&quot;Kiểm tra key\&quot; để thử.&quot;, true);
+    }
+  }
+
+  async function testKey() {
+    if (!cleanKey(keyEl.value)) { setStatus(&quot;Bạn chưa d&#225;n API Key.&quot;, false); return; }
+    saveKey();
+    setStatus(&quot;Đang kiểm tra...&quot;, true);
+    const r = await callGemini(&quot;Trả lời đ&#250;ng một từ: OK&quot;, null, null, true, null, 4096, [], true);
+    if (r) setStatus(&quot;API Key hoạt động b&#236;nh thường.&quot;, true);
+  }
+
+  function explainError(status, detail) {
+    if (status === 400 &amp;&amp; /API key/i.test(detail)) return &quot;API Key kh&#244;ng hợp lệ. H&#227;y tạo key mới tại aistudio.google.com/apikey v&#224; d&#225;n lại (kh&#244;ng thừa khoảng trắng).&quot;;
+    if (status === 400) return &quot;Y&#234;u cầu kh&#244;ng hợp lệ: &quot; + detail;
+    if (status === 401) return &quot;API Key bị từ chối (401). H&#227;y kiểm tra lại key.&quot;;
+    if (status === 403) return &quot;Key kh&#244;ng c&#243; quyền (403): key bị kh&#243;a/hạn chế hoặc API chưa được bật cho dự &#225;n n&#224;y. Tạo key mới trong Google AI Studio.&quot;;
+    if (status === 429) return &quot;Vượt giới hạn sử dụng miễn ph&#237; (429). Đợi một l&#250;c rồi thử lại.&quot;;
+    if (status === 503 || status === 500) return &quot;M&#225;y chủ Google đang qu&#225; tải (&quot; + status + &quot;). Thử lại sau &#237;t ph&#250;t.&quot;;
+    return `Lỗi ${status}: ${detail}`;
+  }
+
+  // ===================== VAI TR&#210; AI =====================
+  const COACH_SYSTEM = `Bạn l&#224; huấn luyện vi&#234;n học tập, gi&#250;p học sinh TỰ l&#224;m được b&#224;i v&#224; học CHỦ ĐỘNG (học bằng c&#225;ch tự tạo ra sản phẩm: tự viết, tự giải, tự n&#243;i, tự nhớ lại), tr&#225;nh học thụ động (đọc đ&#225;p &#225;n, đọc lại, ch&#233;p mẫu).
+
+QUY TẮC BẮT BUỘC:
+- TUYỆT ĐỐI KH&#212;NG viết đ&#225;p &#225;n ho&#224;n chỉnh, b&#224;i mẫu, đoạn văn mẫu, lời giải đầy đủ hay bản viết lại ho&#224;n chỉnh cho ch&#237;nh đề học sinh đưa, kể cả khi đề y&#234;u cầu &quot;viết b&#224;i&quot;.
+- Nếu cần minh họa, chỉ d&#249;ng v&#237; dụ NHỎ tr&#234;n chủ đề/số liệu KH&#193;C với đề gốc, hoặc chỉ đưa khung/c&#244;ng thức tổng qu&#225;t.
+
+CẤU TR&#218;C TRẢ LỜI (ngắn gọn, tiếng Việt, markdown đơn giản):
+1. **Dạng b&#224;i &amp; kỹ năng cần d&#249;ng** (1-2 d&#242;ng).
+2. **Phương ph&#225;p từng bước**: c&#225;ch đọc/ph&#226;n t&#237;ch đề, c&#225;ch t&#236;m &#253; hoặc hướng giải, cấu tr&#250;c/khung cần theo, lỗi hay gặp.
+3. **Gợi &#253; cho đề n&#224;y**: chỉ n&#234;u c&#226;u hỏi dẫn dắt để học sinh tự t&#236;m ra (v&#237; dụ: &quot;Số liệu n&#224;o thay đổi nhiều nhất? N&#234;n so s&#225;nh theo nh&#243;m n&#224;o?&quot;), kh&#244;ng n&#234;u kết quả.
+4. **Nhiệm vụ cho bạn**: giao 1 việc cụ thể để học sinh tự l&#224;m ngay (rồi gửi b&#224;i lại để được nhận x&#233;t).
+5. **C&#225;ch tự kiểm tra**: checklist 3-5 &#253; để học sinh tự chấm b&#224;i của m&#236;nh.
+6. **Mẹo học chủ động** li&#234;n quan: v&#237; dụ tự giải th&#237;ch bằng lời, nhớ lại kh&#244;ng nh&#236;n t&#224;i liệu, luyện c&#225;ch qu&#227;ng, ghi lại lỗi của m&#236;nh để sửa.
+
+KHI HỌC SINH GỬI B&#192;I L&#192;M CỦA HỌ: nhận x&#233;t điểm tốt, chỉ ra lỗi bằng gợi &#253;/c&#226;u hỏi để họ tự sửa, KH&#212;NG viết lại hộ cả b&#224;i. Nếu họ xin đ&#225;p &#225;n, h&#227;y khuyến kh&#237;ch họ thử trước v&#224; chỉ gợi &#253; th&#234;m từng nấc nhỏ.
+Bạn đang trong một cuộc tr&#242; chuyện li&#234;n tục: h&#227;y dựa v&#224;o c&#225;c lượt trước để nhận x&#233;t tiến bộ v&#224; gợi &#253; bước tiếp theo.
+Kh&#244;ng d&#249;ng emoji trong c&#226;u trả lời.`;
+
+  // ===================== HIỂN THỊ MARKDOWN + TO&#193;N =====================
+  function renderMd(text) {
+    const esc = s =&gt; s.replace(/&amp;/g, &#39;&amp;amp;&#39;).replace(/&lt;/g, &#39;&amp;lt;&#39;).replace(/&gt;/g, &#39;&amp;gt;&#39;);
+    const inl = s =&gt; esc(s)
+      .replace(/\\rightarrow\b/g, &#39;→&#39;)
+      .replace(/\*\*(.+?)\*\*/g, &#39;&lt;b&gt;$1&lt;/b&gt;&#39;)
+      .replace(/(^|[^*])\*(?!\s)(.+?)\*(?!\*)/g, &#39;$1&lt;i&gt;$2&lt;/i&gt;&#39;)
+      .replace(/`(.+?)`/g, &#39;&lt;code&gt;$1&lt;/code&gt;&#39;);
+    const lines = String(text).split(&#39;\n&#39;);
+    let html = &#39;&#39;, list = null;
+    const closeList = () =&gt; { if (list) { html += `&lt;/${list}&gt;`; list = null; } };
+    for (let i = 0; i &lt; lines.length; i++) {
+      const line = lines[i].trimEnd();
+      let m;
+      if (!line.trim()) { closeList(); continue; }
+      if (/^\s*\$\$\s*$/.test(line)) {
+        closeList();
+        let end = i + 1;
+        while (end &lt; lines.length &amp;&amp; !/^\s*\$\$\s*$/.test(lines[end])) end++;
+        if (end &lt; lines.length) {
+          const formula = lines.slice(i + 1, end);
+          i = end;
+          html += `&lt;div&gt;$$${esc(formula.join(&#39;\n&#39;))}$$&lt;/div&gt;`;
+          continue;
+        }
+      }
+      if (/^\s*(-{3,}|\*{3,})\s*$/.test(line)) { closeList(); html += &#39;&lt;hr&gt;&#39;; }
+      else if ((m = line.match(/^\s*#{1,6}\s+(.*)$/))) { closeList(); html += `&lt;h4&gt;${inl(m[1])}&lt;/h4&gt;`; }
+      else if ((m = line.match(/^\s*[-*•]\s+(.*)$/))) { if (list !== &#39;ul&#39;) { closeList(); html += &#39;&lt;ul&gt;&#39;; list = &#39;ul&#39;; } html += `&lt;li&gt;${inl(m[1])}&lt;/li&gt;`; }
+      else if ((m = line.match(/^\s*\d+[.)]\s+(.*)$/))) { if (list !== &#39;ol&#39;) { closeList(); html += &#39;&lt;ol&gt;&#39;; list = &#39;ol&#39;; } html += `&lt;li&gt;${inl(m[1])}&lt;/li&gt;`; }
+      else if ((m = line.match(/^\s*&gt;\s?(.*)$/))) { closeList(); html += `&lt;blockquote&gt;${inl(m[1])}&lt;/blockquote&gt;`; }
+      else { closeList(); html += `&lt;p&gt;${inl(line)}&lt;/p&gt;`; }
+    }
+    closeList();
+    return html;
+  }
+
+  const pendingMathElements = new Set();
+
+  function typesetPendingMath() {
+    if (!window.MathJax || !window.MathJax.typesetPromise || !pendingMathElements.size) return;
+    const elements = Array.from(pendingMathElements);
+    pendingMathElements.clear();
+    window.MathJax.startup.promise
+      .then(() =&gt; window.MathJax.typesetPromise(elements))
+      .catch(error =&gt; console.error(&quot;Kh&#244;ng thể hiển thị c&#244;ng thức:&quot;, error));
+  }
+
+  function typesetMath(element) {
+    pendingMathElements.add(element);
+    typesetPendingMath();
+  }
+
+  const wait = ms =&gt; new Promise(resolve =&gt; setTimeout(resolve, ms));
+
+  // ===================== CHẠY BẰNG CLAUDE (KHI KH&#212;NG C&#211; KEY GEMINI HOẶC BỊ CHẶN MẠNG) =====================
+  async function getSample() {
+    try { return (window.claude &amp;&amp; window.claude.use) ? ((await window.claude.use(&#39;sample&#39;)) || null) : null; }
+    catch (e) { return null; }
+  }
+
+  function b64ToBlob(b64, mime) {
+    const bin = atob(b64);
+    const arr = new Uint8Array(bin.length);
+    for (let i = 0; i &lt; bin.length; i++) arr[i] = bin.charCodeAt(i);
+    return new Blob([arr], { type: mime });
+  }
+
+  async function callClaude(sample, promptText, fileData, mimeType, systemText, history) {
+    const intro = systemText ? systemText + &#39;\n\n---\n&#39; : &#39;&#39;;
+    const msgs = history.map((h, i) =&gt; ({ role: h.role === &#39;model&#39; ? &#39;assistant&#39; : &#39;user&#39;, content: (i === 0 ? intro : &#39;&#39;) + h.text }));
+    msgs.push({ role: &#39;user&#39;, content: (msgs.length ? &#39;&#39; : intro) + promptText });
+    const opts = { cache: false };
+    if (fileData &amp;&amp; mimeType) {
+      let lim = null;
+      try { lim = await sample.limits(); } catch (e) {}
+      if (!mimeType.startsWith(&#39;image/&#39;) || !(lim &amp;&amp; lim.images)) {
+        toast(&#39;Chế độ kh&#244;ng cần key chưa đọc được tệp n&#224;y. H&#227;y gửi ảnh chụp, hoặc nhập Gemini API Key.&#39;);
+        return null;
+      }
+      opts.images = [b64ToBlob(fileData, mimeType)];
+    }
+    try {
+      const r = await sample(msgs, opts);
+      return (r &amp;&amp; r.text) || &quot;(Kh&#244;ng c&#243; nội dung trả về, h&#227;y thử gửi lại.)&quot;;
+    } catch (e) {
+      console.error(e);
+      const code = e &amp;&amp; e.code;
+      toast(code === &#39;not_granted&#39; ? &#39;Bạn chưa cho ph&#233;p trang n&#224;y d&#249;ng Claude. H&#227;y gửi lại v&#224; chọn cho ph&#233;p.&#39;
+        : code === &#39;rate_limited&#39; ? &#39;Gửi hơi nhanh. Đợi một l&#250;c rồi thử lại.&#39;
+        : &#39;Kh&#244;ng gọi được Claude: &#39; + ((e &amp;&amp; e.message) || &#39;lỗi kh&#244;ng r&#245;&#39;));
+      return null;
+    }
+  }
+
+  // ===================== GỌI GEMINI =====================
+  function modelOrder() {
+    let saved = null;
+    try { saved = localStorage.getItem(&#39;gemini_model&#39;); } catch (e) {}
+    return saved &amp;&amp; MODELS.includes(saved) ? [saved, ...MODELS.filter(m =&gt; m !== saved)] : MODELS;
+  }
+
+  // history: [{role:&#39;user&#39;|&#39;model&#39;, text}] c&#225;c lượt trước trong cuộc tr&#242; chuyện (chỉ văn bản)
+  async function callGemini(promptText, fileData = null, mimeType = null, silentOk = false, systemText = null, maxOutputTokens = 4096, history = [], keyOnly = false) {
+    const apiKey = getKey();
+    const sample = keyOnly ? null : await getSample();
+    if (!apiKey) {
+      if (sample) return callClaude(sample, promptText, fileData, mimeType, systemText, history);
+      setStatus(&quot;Bạn chưa nhập API Key.&quot;, false);
+      $(&#39;keyBox&#39;).open = true;
+      toast(&quot;Bạn chưa nhập API Key.&quot;);
+      return null;
+    }
+
+    const parts = [{ text: promptText }];
+    if (fileData &amp;&amp; mimeType) {
+      parts.push({ inline_data: { mime_type: mimeType, data: fileData } });
+    }
+    const contents = [
+      ...history.map(h =&gt; ({ role: h.role, parts: [{ text: h.text }] })),
+      { role: &quot;user&quot;, parts }
+    ];
+    const payload = { contents, generationConfig: { maxOutputTokens } };
+    if (systemText) payload.system_instruction = { parts: [{ text: systemText }] };
+    const body = JSON.stringify(payload);
+
+    let lastMsg = &quot;&quot;;
+    let netBlocked = false;
+
+    models: for (const model of modelOrder()) {
+      const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`;
+
+      for (let attempt = 0; attempt &lt; 2; attempt++) {
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() =&gt; controller.abort(), 60000);
+        try {
+          const res = await fetch(url, {
+            method: &quot;POST&quot;,
+            headers: { &quot;Content-Type&quot;: &quot;application/json&quot;, &quot;x-goog-api-key&quot;: apiKey },
+            body,
+            signal: controller.signal
+          });
+          const data = await res.json().catch(() =&gt; ({}));
+
+          if (res.ok) {
+            try { localStorage.setItem(&#39;gemini_model&#39;, model); } catch (e) {}
+            const cand = data?.candidates?.[0];
+            let text = cand?.content?.parts?.map(p =&gt; p.text || &#39;&#39;).join(&quot;&quot;) || &quot;&quot;;
+            if (!text) return &quot;(Kh&#244;ng c&#243; nội dung trả về, h&#227;y thử gửi lại.)&quot;;
+            if (cand?.finishReason === &quot;MAX_TOKENS&quot;) text += &quot;\n\n_(C&#226;u trả lời bị cắt do qu&#225; d&#224;i. H&#227;y hỏi cụ thể hơn từng phần.)_&quot;;
+            return text;
+          }
+
+          const detail = data?.error?.message || res.statusText;
+          console.error(&quot;Lỗi API:&quot;, model, res.status, data);
+          lastMsg = explainError(res.status, detail);
+
+          if (res.status === 404) break;
+          if ([429, 500, 502, 503, 504].includes(res.status)) {
+            if (attempt === 0) { await wait(1000); continue; }
+            break;
+          }
+
+          setStatus(lastMsg, false);
+          toast(lastMsg);
+          return null;
+        } catch (e) {
+          console.error(e);
+          if (e.name === &quot;AbortError&quot;) {
+            lastMsg = &quot;M&#225;y chủ AI phản hồi qu&#225; l&#226;u. H&#227;y thử lại.&quot;;
+            break;
+          }
+          lastMsg = &quot;Kh&#244;ng thể kết nối đến m&#225;y chủ AI. Kiểm tra mạng, hoặc tắt extension chặn quảng c&#225;o/VPN rồi thử lại.&quot;;
+          netBlocked = true;
+          break models;
+        } finally {
+          clearTimeout(timeoutId);
+        }
+      }
+    }
+
+    if (netBlocked &amp;&amp; sample) return callClaude(sample, promptText, fileData, mimeType, systemText, history);
+
+    const msg = (lastMsg || &quot;Kh&#244;ng gọi được model n&#224;o.&quot;) + &quot; (Đ&#227; thử lần lượt: &quot; + MODELS.join(&quot;, &quot;) + &quot;)&quot;;
+    setStatus(msg, false);
+    toast(lastMsg || &quot;Kh&#244;ng gọi được model n&#224;o.&quot;);
+    return null;
+  }
+
+  // Khi chạy trong trang c&#243; Claude v&#224; chưa c&#243; key: ẩn &#244; key, b&#225;o l&#224; d&#249;ng được ngay
+  getSample().then(s =&gt; {
+    if (s &amp;&amp; !cleanKey(keyEl.value)) {
+      $(&#39;keyBox&#39;).open = false;
+      $(&#39;keyHint&#39;).hidden = false;
+    }
+  });
+
+  // ===================== THANH LỊCH SỬ =====================
+  function setSide(open) { document.body.classList.toggle(&#39;side-open&#39;, open); }
+  setSide(window.innerWidth &gt;= 1100);
+
+  // ===================== LỊCH SỬ (THEO CUỘC TR&#210; CHUYỆN) =====================
+  const CONV_KEY = &#39;lumiere_convs_v2&#39;;
+  const OLD_KEY = &#39;lumiere_history_v1&#39;;
+  const CONV_MAX = 60;
+  let conv = null;
+  let activeId = null;
+  let busy = false;
+  let showingRoadmap = false;
+
+  function saveConvs(arr) {
+    const copy = arr.slice();
+    while (true) {
+      try { localStorage.setItem(CONV_KEY, JSON.stringify(copy)); return copy; }
+      catch (e) { if (copy.length &lt;= 1) return null; copy.pop(); }
+    }
+  }
+
+  function loadConvs() {
+    try {
+      const raw = localStorage.getItem(CONV_KEY);
+      if (raw) return JSON.parse(raw) || [];
+    } catch (e) {}
+    try {
+      const old = JSON.parse(localStorage.getItem(OLD_KEY) || &#39;[]&#39;);
+      const migrated = old.map(h =&gt; ({
+        id: h.id, ts: h.ts, type: h.type === &#39;roadmap&#39; ? &#39;roadmap&#39; : &#39;chat&#39;,
+        title: (h.q || h.fileName || &#39;Kh&#244;ng c&#243; ti&#234;u đề&#39;).slice(0, 70),
+        messages: [
+          { role: &#39;user&#39;, text: h.q || &#39;&#39;, thumb: h.thumb || null, fileName: h.fileName || &#39;&#39; },
+          { role: &#39;model&#39;, text: h.a }
+        ]
+      }));
+      if (migrated.length) saveConvs(migrated);
+      return migrated;
+    } catch (e) { return []; }
+  }
+
+  function upsertConv(c) {
+    const list = loadConvs().filter(x =&gt; x.id !== c.id);
+    list.unshift(c);
+    saveConvs(list.slice(0, CONV_MAX));
+    renderHistory();
+  }
+
+  function makeThumb(dataUrl) {
+    return new Promise(resolve =&gt; {
+      const img = new Image();
+      img.onload = () =&gt; {
+        try {
+          const s = Math.min(1, 120 / Math.max(img.width, img.height, 1));
+          const c = document.createElement(&#39;canvas&#39;);
+          c.width = Math.max(1, Math.round(img.width * s));
+          c.height = Math.max(1, Math.round(img.height * s));
+          c.getContext(&#39;2d&#39;).drawImage(img, 0, 0, c.width, c.height);
+          resolve(c.toDataURL(&#39;image/jpeg&#39;, 0.6));
+        } catch (e) { resolve(null); }
+      };
+      img.onerror = () =&gt; resolve(null);
+      img.src = dataUrl;
+    });
+  }
+
+  function fmtTime(ts) {
+    return new Date(ts).toLocaleString(&#39;vi-VN&#39;, { day: &#39;2-digit&#39;, month: &#39;2-digit&#39;, hour: &#39;2-digit&#39;, minute: &#39;2-digit&#39; });
+  }
+
+  function renderHistory() {
+    const listEl = $(&#39;histList&#39;);
+    const kw = $(&#39;histSearch&#39;).value.trim().toLowerCase();
+    const all = loadConvs();
+    const items = kw
+      ? all.filter(c =&gt; (c.title + &#39; &#39; + c.messages.map(m =&gt; m.text).join(&#39; &#39;)).toLowerCase().includes(kw))
+      : all;
+
+    listEl.textContent = &#39;&#39;;
+    if (!items.length) {
+      const d = document.createElement(&#39;div&#39;);
+      d.className = &#39;hist-empty&#39;;
+      d.textContent = all.length ? &#39;Kh&#244;ng t&#236;m thấy kết quả ph&#249; hợp.&#39; : &#39;Chưa c&#243; cuộc tr&#242; chuyện n&#224;o. Mỗi cuộc hỏi b&#224;i sẽ được lưu tự động ở đ&#226;y.&#39;;
+      listEl.appendChild(d);
+      return;
+    }
+    for (const c of items) {
+      const row = document.createElement(&#39;div&#39;);
+      row.className = &#39;hist-item&#39; + (c.id === activeId ? &#39; active&#39; : &#39;&#39;);
+      row.onclick = () =&gt; openConversation(c.id);
+
+      const main = document.createElement(&#39;div&#39;);
+      main.className = &#39;hist-main&#39;;
+      const t = document.createElement(&#39;div&#39;);
+      t.className = &#39;hist-title&#39;;
+      t.insertAdjacentHTML(&#39;beforeend&#39;, ic(c.type === &#39;roadmap&#39; ? &#39;map&#39; : &#39;chat&#39;));
+      const tt = document.createElement(&#39;span&#39;);
+      tt.style.cssText = &#39;overflow:hidden;text-overflow:ellipsis&#39;;
+      tt.textContent = c.title;
+      t.appendChild(tt);
+      const tm = document.createElement(&#39;div&#39;);
+      tm.className = &#39;hist-time&#39;;
+      tm.textContent = fmtTime(c.ts) + (c.type === &#39;chat&#39; ? &#39; &#183; &#39; + Math.ceil(c.messages.length / 2) + &#39; lượt&#39; : &#39;&#39;);
+      main.appendChild(t);
+      main.appendChild(tm);
+      row.appendChild(main);
+
+      const del = document.createElement(&#39;button&#39;);
+      del.type = &#39;button&#39;;
+      del.className = &#39;hist-del icon&#39;;
+      del.innerHTML = ic(&#39;close&#39;);
+      del.title = &#39;X&#243;a&#39;;
+      del.setAttribute(&#39;aria-label&#39;, &#39;X&#243;a mục n&#224;y&#39;);
+      del.onclick = ev =&gt; { ev.stopPropagation(); deleteConv(c.id); };
+      row.appendChild(del);
+
+      listEl.appendChild(row);
+    }
+  }
+
+  async function deleteConv(id) {
+    if (!(await askConfirm(&quot;X&#243;a mục n&#224;y khỏi lịch sử?&quot;))) return;
+    saveConvs(loadConvs().filter(c =&gt; c.id !== id));
+    if (activeId === id) newConversation();
+    else renderHistory();
+  }
+
+  async function clearHistory() {
+    if (!loadConvs().length) return;
+    if (!(await askConfirm(&quot;X&#243;a to&#224;n bộ lịch sử? Thao t&#225;c n&#224;y kh&#244;ng ho&#224;n t&#225;c được.&quot;, &quot;X&#243;a tất cả&quot;))) return;
+    try { localStorage.removeItem(CONV_KEY); localStorage.removeItem(OLD_KEY); } catch (e) {}
+    newConversation();
+  }
+
+  // ===================== KHUNG CHAT =====================
+  function scrollChat() {
+    chatBox.scrollTo({ top: chatBox.scrollHeight, behavior: &#39;smooth&#39; });
+  }
+
+  function showEmpty() {
+    chatBox.textContent = &#39;&#39;;
+    const e = document.createElement(&#39;div&#39;);
+    e.className = &#39;empty&#39;;
+    e.id = &#39;emptyState&#39;;
+    e.innerHTML = `&lt;div&gt;${ic(&#39;spark&#39;)}&lt;br&gt;&lt;b&gt;Xin ch&#224;o&lt;/b&gt;&lt;br&gt;Gửi đề b&#224;i hoặc ảnh b&#224;i tập.&lt;br&gt;M&#236;nh sẽ chỉ phương ph&#225;p để bạn tự l&#224;m,&lt;br&gt;rồi gửi b&#224;i lại để m&#236;nh nhận x&#233;t.&lt;/div&gt;`;
+    chatBox.appendChild(e);
+  }
+
+  function clearEmpty() {
+    const e = $(&#39;emptyState&#39;);
+    if (e) e.remove();
+  }
+
+  function appendUserMsg(text, imgSrc, fileName) {
+    const d = document.createElement(&#39;div&#39;);
+    d.className = &#39;message user-msg&#39;;
+    if (imgSrc) {
+      const img = document.createElement(&#39;img&#39;);
+      img.src = imgSrc;
+      d.appendChild(img);
+    } else if (fileName) {
+      const s = document.createElement(&#39;span&#39;);
+      s.className = &#39;with-i&#39;;
+      s.innerHTML = ic(&#39;file&#39;);
+      s.appendChild(document.createTextNode(fileName));
+      d.appendChild(s);
+      d.appendChild(document.createElement(&#39;br&#39;));
+    }
+    d.appendChild(document.createTextNode(text || &#39;&#39;));
+    chatBox.appendChild(d);
+    scrollChat();
+    return d;
+  }
+
+  function appendAiMsg(text) {
+    const d = document.createElement(&#39;div&#39;);
+    d.className = &#39;message ai-msg&#39;;
+    if (text != null) { d.innerHTML = renderMd(text); typesetMath(d); }
+    chatBox.appendChild(d);
+    scrollChat();
+    return d;
+  }
+
+  function reveal(el) {
+    el.style.animation = &#39;none&#39;;
+    void el.offsetWidth;
+    el.style.animation = &#39;&#39;;
+  }
+
+  function newConversation() {
+    conv = null;
+    activeId = null;
+    showingRoadmap = false;
+    clearAttachment();
+    inputEl.value = &#39;&#39;;
+    autoGrow();
+    showEmpty();
+    renderHistory();
+    if (window.innerWidth &lt; 1100) setSide(false);
+    if (window.matchMedia(&#39;(pointer: fine)&#39;).matches) inputEl.focus();
+  }
+
+  function openConversation(id) {
+    const c = loadConvs().find(x =&gt; x.id === id);
+    if (!c) return;
+    activeId = id;
+    showingRoadmap = c.type === &#39;roadmap&#39;;
+    conv = showingRoadmap ? null : c;
+
+    chatBox.textContent = &#39;&#39;;
+    for (const m of c.messages) {
+      if (m.role === &#39;user&#39;) appendUserMsg(m.text, m.thumb, m.fileName);
+      else appendAiMsg(m.text);
+    }
+    renderHistory();
+    if (window.innerWidth &lt; 1100) setSide(false);
+    chatBox.scrollIntoView({ behavior: &#39;smooth&#39;, block: &#39;nearest&#39; });
+    scrollChat();
+  }
+
+  // ===================== Đ&#205;NH K&#200;M ẢNH/PDF =====================
+  let pendingFile = null;
+
+  function attachFile(file) {
+    if (!file) return;
+    if (file.size &gt; 15 * 1024 * 1024) { toast(&quot;File qu&#225; lớn (tối đa ~15MB).&quot;); return; }
+    const mimeType = file.type || (file.name.toLowerCase().endsWith(&#39;.pdf&#39;) ? &#39;application/pdf&#39; : &#39;image/jpeg&#39;);
+    const reader = new FileReader();
+    reader.onloadend = function () {
+      const dataUrl = reader.result;
+      pendingFile = { base64: dataUrl.split(&#39;,&#39;)[1], mimeType, dataUrl, name: file.name || &#39;ảnh d&#225;n&#39; };
+      const thumb = $(&#39;attachThumb&#39;);
+      thumb.style.display = mimeType.startsWith(&#39;image/&#39;) ? &#39;block&#39; : &#39;none&#39;;
+      thumb.src = mimeType.startsWith(&#39;image/&#39;) ? dataUrl : &#39;&#39;;
+      $(&#39;attachName&#39;).textContent = pendingFile.name;
+      $(&#39;attachPreview&#39;).style.display = &#39;flex&#39;;
+    };
+    reader.readAsDataURL(file);
+  }
+
+  function clearAttachment() {
+    pendingFile = null;
+    $(&#39;chatFile&#39;).value = &#39;&#39;;
+    $(&#39;attachPreview&#39;).style.display = &#39;none&#39;;
+  }
+
+  $(&#39;chatFile&#39;).addEventListener(&#39;change&#39;, e =&gt; attachFile(e.target.files[0]));
+
+  inputEl.addEventListener(&#39;paste&#39;, e =&gt; {
+    for (const item of (e.clipboardData?.items || [])) {
+      if (item.type.startsWith(&#39;image/&#39;)) { attachFile(item.getAsFile()); e.preventDefault(); break; }
+    }
+  });
+
+  // ===================== GỬI TIN NHẮN =====================
+  async function sendMessage() {
+    if (busy) return;
+    const msg = inputEl.value.trim();
+    if (!msg &amp;&amp; !pendingFile) return;
+
+    const file = pendingFile;
+    const isImg = !!(file &amp;&amp; file.mimeType.startsWith(&#39;image/&#39;));
+    const thumbPromise = isImg ? makeThumb(file.dataUrl) : Promise.resolve(null);
+
+    busy = true;
+    $(&#39;sendBtn&#39;).style.opacity = .5;
+
+    if (showingRoadmap) { chatBox.textContent = &#39;&#39;; showingRoadmap = false; activeId = null; conv = null; renderHistory(); }
+    clearEmpty();
+    clearAttachment();
+    appendUserMsg(msg, isImg ? file.dataUrl : null, file ? file.name : &#39;&#39;);
+    inputEl.value = &#39;&#39;;
+    autoGrow();
+
+    const loadingDiv = appendAiMsg(null);
+    loadingDiv.innerHTML = `&lt;span class=&quot;pulse&quot;&gt;${ic(&#39;loader&#39;, &#39;spin&#39;)}Đang ph&#226;n t&#237;ch đề b&#224;i v&#224; x&#226;y dựng phương ph&#225;p...&lt;/span&gt;`;
+    scrollChat();
+
+    const history = conv ? conv.messages.map(m =&gt; ({
+      role: m.role,
+      text: (m.role === &#39;user&#39; &amp;&amp; m.fileName ? `[Học sinh đ&#227; đ&#237;nh k&#232;m: ${m.fileName}]\n` : &#39;&#39;) + (m.text || &#39;(chỉ gửi tệp đ&#237;nh k&#232;m)&#39;)
+    })) : [];
+
+    const prompt = msg || &quot;(Nội dung nằm trong ảnh/t&#224;i liệu đ&#237;nh k&#232;m. H&#227;y đọc n&#243;, rồi hướng dẫn phương ph&#225;p v&#224; c&#225;ch học, KH&#212;NG giải hộ.)&quot;;
+    const reply = await callGemini(prompt, file ? file.base64 : null, file ? file.mimeType : null, false, COACH_SYSTEM, 4096, history);
+
+    if (reply) {
+      loadingDiv.innerHTML = renderMd(reply);
+      reveal(loadingDiv);
+      typesetMath(loadingDiv);
+
+      const thumb = await thumbPromise;
+      if (!conv) {
+        conv = {
+          id: Date.now().toString(36) + Math.random().toString(36).slice(2, 6),
+          ts: Date.now(), type: &#39;chat&#39;,
+          title: (msg || (file ? file.name : &#39;Cuộc tr&#242; chuyện&#39;)).replace(/\s+/g, &#39; &#39;).slice(0, 70),
+          messages: []
+        };
+      }
+      conv.messages.push({ role: &#39;user&#39;, text: msg, thumb, fileName: file ? file.name : &#39;&#39; });
+      conv.messages.push({ role: &#39;model&#39;, text: reply });
+      conv.ts = Date.now();
+      activeId = conv.id;
+      upsertConv(conv);
+    } else {
+      loadingDiv.textContent = &quot;Kh&#244;ng nhận được phản hồi từ trợ giảng. H&#227;y thử gửi lại.&quot;;
+    }
+
+    scrollChat();
+    busy = false;
+    $(&#39;sendBtn&#39;).style.opacity = 1;
+  }
+
+  // ===================== LỘ TR&#204;NH HỌC (nằm trong thanh lịch sử) =====================
+  let roadmapBusy = false;
+
+  async function generateRoadmap() {
+    if (roadmapBusy || busy) return;
+    const fileInput = $(&#39;bookInput&#39;);
+    const roadmapBtn = $(&#39;roadmapBtn&#39;);
+
+    if (fileInput.files.length === 0) {
+      toast(&quot;H&#227;y chọn một file trước.&quot;);
+      return;
+    }
+    const file = fileInput.files[0];
+    const mimeType = file.type || (file.name.toLowerCase().endsWith(&#39;.pdf&#39;) ? &#39;application/pdf&#39; : &#39;image/jpeg&#39;);
+    if (!mimeType.startsWith(&#39;image/&#39;) &amp;&amp; mimeType !== &#39;application/pdf&#39;) {
+      toast(&quot;Định dạng file kh&#244;ng được hỗ trợ. H&#227;y chọn ảnh hoặc PDF.&quot;);
+      return;
+    }
+    if (file.size &gt; 15 * 1024 * 1024) {
+      toast(&quot;File qu&#225; lớn (tối đa khoảng 15 MB).&quot;);
+      return;
+    }
+
+    roadmapBusy = true;
+    roadmapBtn.disabled = true;
+
+    let dataUrl;
+    try {
+      dataUrl = await new Promise((resolve, reject) =&gt; {
+        const reader = new FileReader();
+        reader.onload = () =&gt; typeof reader.result === &#39;string&#39;
+          ? resolve(reader.result)
+          : reject(new Error(&quot;File kh&#244;ng đọc được.&quot;));
+        reader.onerror = () =&gt; reject(reader.error || new Error(&quot;Kh&#244;ng thể đọc file.&quot;));
+        reader.readAsDataURL(file);
+      });
+    } catch (error) {
+      console.error(&quot;Kh&#244;ng thể đọc t&#224;i liệu lập lộ tr&#236;nh:&quot;, error);
+      toast(&quot;Kh&#244;ng thể đọc file. H&#227;y thử chọn lại ảnh hoặc PDF kh&#225;c.&quot;);
+      roadmapBusy = false;
+      roadmapBtn.disabled = false;
+      return;
+    }
+
+    const base64Data = dataUrl.split(&#39;,&#39;)[1];
+    const isImg = mimeType.startsWith(&#39;image/&#39;);
+
+    conv = null; activeId = null; showingRoadmap = true;
+    clearAttachment();
+    chatBox.textContent = &#39;&#39;;
+    appendUserMsg(&#39;Lập lộ tr&#236;nh học từ t&#224;i liệu n&#224;y.&#39;, isImg ? dataUrl : null, file.name);
+    const loadingDiv = appendAiMsg(null);
+    loadingDiv.innerHTML = `&lt;span class=&quot;pulse&quot;&gt;${ic(&#39;loader&#39;, &#39;spin&#39;)}Đang qu&#233;t t&#224;i liệu v&#224; thiết lập lộ tr&#236;nh học tập, vui l&#242;ng đợi...&lt;/span&gt;`;
+    if (window.innerWidth &lt; 1100) setSide(false);
+    renderHistory();
+    chatBox.scrollIntoView({ behavior: &#39;smooth&#39;, block: &#39;nearest&#39; });
+
+    try {
+      if (!base64Data) throw new Error(&quot;Nội dung file kh&#244;ng hợp lệ.&quot;);
+      const roadmapResult = await callGemini(
+        &quot;Dựa v&#224;o t&#224;i liệu/b&#224;i tập n&#224;y, h&#227;y lập lộ tr&#236;nh học CHỦ ĐỘNG chi tiết theo từng tuần bằng tiếng Việt. Mỗi tuần gồm: mục ti&#234;u, c&#225;c hoạt động học chủ động học sinh phải tự l&#224;m (tự viết/tự giải/tự n&#243;i/tự nhớ lại, kh&#244;ng chỉ đọc), b&#224;i tự kiểm tra cuối tuần, v&#224; c&#225;ch tự đ&#225;nh gi&#225; tiến bộ. Kh&#244;ng đưa đ&#225;p &#225;n hay b&#224;i mẫu.&quot;,
+        base64Data, mimeType, false, COACH_SYSTEM, 8192
+      );
+
+      if (roadmapResult) {
+        loadingDiv.innerHTML = renderMd(roadmapResult);
+        reveal(loadingDiv);
+        typesetMath(loadingDiv);
+        const thumb = isImg ? await makeThumb(dataUrl) : null;
+        const roadmapConv = {
+          id: Date.now().toString(36) + Math.random().toString(36).slice(2, 6),
+          ts: Date.now(), type: &#39;roadmap&#39;, title: &#39;Lộ tr&#236;nh: &#39; + file.name,
+          messages: [
+            { role: &#39;user&#39;, text: &#39;Lộ tr&#236;nh học từ: &#39; + file.name, thumb, fileName: file.name },
+            { role: &#39;model&#39;, text: roadmapResult }
+          ]
+        };
+        activeId = roadmapConv.id;
+        upsertConv(roadmapConv);
+        fileInput.value = &#39;&#39;;
+        $(&#39;roadDet&#39;).open = false;
+      } else {
+        loadingDiv.textContent = &quot;Lập lộ tr&#236;nh thất bại. Xem th&#244;ng b&#225;o lỗi ở mục API Key.&quot;;
+      }
+    } catch (error) {
+      console.error(&quot;Kh&#244;ng thể lập lộ tr&#236;nh:&quot;, error);
+      loadingDiv.textContent = &quot;Kh&#244;ng thể đọc file. H&#227;y thử chọn lại ảnh hoặc PDF kh&#225;c.&quot;;
+    } finally {
+      roadmapBusy = false;
+      roadmapBtn.disabled = false;
+      scrollChat();
+    }
+  }
+
+  function handleKeyPress(event) {
+    // M&#225;y t&#237;nh: Enter gửi, Shift+Enter xuống d&#242;ng. Điện thoại: Enter xuống d&#242;ng, d&#249;ng n&#250;t gửi.
+    if (event.key === &#39;Enter&#39; &amp;&amp; !event.shiftKey &amp;&amp; !event.isComposing &amp;&amp; window.matchMedia(&#39;(pointer: fine)&#39;).matches) {
+      event.preventDefault();
+      sendMessage();
+    }
+  }
+
+  // Khởi tạo
+  showEmpty();
+  renderHistory();
+&lt;/script&gt;
+
+&lt;/body&gt;&lt;/html&gt;"></iframe>
+  </section>
+  <section class="cta" id="bat-dau"><div><h2>Sẵn sàng bắt đầu học chủ động?</h2><p>Mở trợ giảng và cùng tìm cách giải bài tiếp theo của bạn.</p></div><a class="button" href="#ai">Truy cập AI</a></section>
+</main>
+<footer><span>© 2026 Lumière L'Anhs AI</span><span>Học bằng cách tự làm · Tiếng Việt</span></footer>
+</div>
+<script>
+(function () {
+  var app = document.getElementById('ai');
+  var openLinks = document.querySelectorAll('a[href="#ai"]');
+  var homeButton = document.getElementById('homeButton');
+
+  function showApp(show) {
+    app.hidden = !show;
+    document.body.style.overflow = show ? 'hidden' : '';
+  }
+
+  openLinks.forEach(function (link) {
+    link.addEventListener('click', function (event) {
+      event.preventDefault();
+      if (location.hash !== '#ai') history.pushState({ view: 'ai' }, '', '#ai');
+      showApp(true);
+    });
+  });
+
+  homeButton.addEventListener('click', function () {
+    if (location.hash === '#ai') history.back();
+    else showApp(false);
+  });
+
+  window.addEventListener('popstate', function () {
+    showApp(location.hash === '#ai');
+  });
+
+  showApp(location.hash === '#ai');
+})();
+</script>
+</body>
+</html>
+
